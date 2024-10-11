@@ -6,7 +6,7 @@ import mongoose from 'mongoose'
 const app = express()
 // app.use(cors())
 app.use(cors({
-    origin:'https://emsfrontend-premgc-dne4dpp69-prem-gcs-projects.vercel.app',
+    origin:'https://emsfrontend-premgc.vercel.app/',
     allowedHeaders: ['Content-Type', 'Authorization']
   
 }))
