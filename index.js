@@ -35,6 +35,9 @@ app.use('/api', resetpasswordRouter)
 app.use('/api', adminsummaryRouter)
 
 
+app.get('/', (req,res)=>{
+    res.send({message:"Hello World "})
+})
 
 
 
