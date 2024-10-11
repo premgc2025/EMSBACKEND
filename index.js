@@ -6,13 +6,9 @@ import mongoose from 'mongoose'
 
 
 const app = express()
-
-
-<<<<<<< HEAD
 app.use(cors())
-=======
 
->>>>>>> d0cf5730569cdbfc1463f112bb6a93aa64f1d2a2
+
 
 app.use(express.json())
 app.use(express.static('public/image'))
