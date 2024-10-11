@@ -8,7 +8,7 @@ const app = express()
 
 // CORS configuration
 const corsOptions = {
-    origin: 'https://emsfrontend-premgc.vercel.app', // Allow your frontend origin
+    origin: 'https://emsfrontend-premgc.vercel.app/register', // Allow your frontend origin
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
   };
