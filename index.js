@@ -9,7 +9,7 @@ const app = express()
 
 
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:'https://emsbackend-premgc.vercel.app/',
     credential: true
 }))
 app.use(express.json())
