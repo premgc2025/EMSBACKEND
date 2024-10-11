@@ -4,12 +4,13 @@ import mongoose from 'mongoose'
 
 
 const app = express()
+app.use(cors())
 
-app.use(cors({
-    origin: 'https://emsfrontend-premgc.vercel.app', // replace with your frontend URL
-    allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowHeaders: ['Content-Type', 'Authorization'],
-  }));
+// app.use(cors({
+//     origin: 'https://emsfrontend-premgc.vercel.app', // replace with your frontend URL
+//     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//     allowHeaders: ['Content-Type', 'Authorization'],
+//   }));
 
 app.use(express.json())
 app.use(express.static('public/image'))
