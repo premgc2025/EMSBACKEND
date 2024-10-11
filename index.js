@@ -34,7 +34,7 @@ app.use('/api', adminsummaryRouter)
 
 
 app.get('/', (req,res)=>{
-    res.send({message:"Hello World "})
+    res.send({message:"Hello Wolrd! "})
 })
 
 
