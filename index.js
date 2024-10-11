@@ -8,10 +8,11 @@ import mongoose from 'mongoose'
 const app = express()
 
 
-app.use(cors({
-    origin:'http://localhost:5173',
-    credential: true
-}))
+app.use(cors())
+// app.use(cors({
+//     origin:'http://localhost:5173',
+//     credential: true
+// }))
 app.use(express.json())
 app.use(express.static('public/image'))
 
