@@ -44,7 +44,7 @@ app.get('/', (req,res)=>{
 
 
 
-mongoose.connect(`${process.env.mongo_URL}/EMS`)
+mongoose.connect(`${process.env.mongo_URL}EMS`)
 .then((response)=>{
     console.log("DBMS Server is Up and Running")
 })
