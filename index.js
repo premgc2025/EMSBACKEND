@@ -8,9 +8,6 @@ const app = express()
 
 
 
-  
-  app.use(cors(handler));
-
 app.use(express.json())
 app.use(express.static('public/image'))
 
@@ -35,7 +32,7 @@ app.use('/api', resetpasswordRouter)
 app.use('/api', adminsummaryRouter)
 
 
-app.get('/hello', (req,res)=>{
+app.get('/', (req,res)=>{
     res.send({message:"Hello Wolrd! "})
 })
 
