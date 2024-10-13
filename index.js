@@ -5,7 +5,12 @@ import mongoose from 'mongoose'
 
 
 const app = express()
-app.use(cors())
+
+app.use(cors({
+    origin: '*', // Specify your front-end URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true // Enable credentials if needed
+}));
 
 app.use(express.json())
 app.use(express.static('public/image'))
@@ -20,7 +25,7 @@ import salaryRouter from './Router/SalaryRouter.js'
 import leaveRouter from './Router/LeaveRouter.js'
 import resetpasswordRouter from './Router/ResetPasswordRouter.js'
 import adminsummaryRouter from './Router/AdminSummaryRouter.js'
-import handler from './Router/handler.js';
+
 
 app.use('/',router)
 app.use('/api',deptRouter)
