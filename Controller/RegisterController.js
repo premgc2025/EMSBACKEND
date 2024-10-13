@@ -5,15 +5,7 @@ import registerModel from '../Model/RegisterModel.js'
 
 const RegisterController = (req,res)=>{
 
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Adjust as needed
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-    // Handle preflight requests
-    if (req.method === 'OPTIONS') {
-        res.status(200).end();
-        return;
-    }
+  
     
         const regDetail = req.body       
       const saltRounds = 10;
