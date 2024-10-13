@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
+import handler from './Router/handler.js'
 
 
 const app = express()
@@ -8,14 +9,7 @@ const app = express()
 
 
   
-  app.use(cors(
-    {
-        origin: '*', // Allow your frontend origin
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
-        allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-      }
-
-  ));
+  app.use(cors(handler));
 
 app.use(express.json())
 app.use(express.static('public/image'))
@@ -30,6 +24,7 @@ import salaryRouter from './Router/SalaryRouter.js'
 import leaveRouter from './Router/LeaveRouter.js'
 import resetpasswordRouter from './Router/ResetPasswordRouter.js'
 import adminsummaryRouter from './Router/AdminSummaryRouter.js'
+import handler from './Router/handler.js';
 
 app.use('/',router)
 app.use('/api',deptRouter)
