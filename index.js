@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import handler from './Router/handler.js'
+
 
 
 const app = express()
