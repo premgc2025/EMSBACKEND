@@ -7,11 +7,6 @@ import mongoose from 'mongoose'
 
 const app = express()
 
-
-app.use(cors({
-    origin:'https://emsfrontend-premgc.vercel.app',
-    credentials: true
-}))
 app.use(express.json())
 app.use(express.static('public/image'))
 
