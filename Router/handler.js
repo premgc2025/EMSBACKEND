@@ -1,6 +1,6 @@
 // api/hello.js
 
-export default function handler(req, res) {
+export default function handler(req, res,next) {
     // Set CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*'); // Adjust as needed
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -8,10 +8,9 @@ export default function handler(req, res) {
 
     // Handle preflight requests
     if (req.method === 'OPTIONS') {
-        res.status(200).end();
-        return;
+        next()
+        // res.status(200).end();
+        // return;
     }
 
-    // // Main logic of your function
-    // res.json({ message: 'Hello World' });
 }
