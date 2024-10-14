@@ -7,6 +7,12 @@ import mongoose from 'mongoose'
 
 const app = express()
 
+app.use(cors({
+    origin: '*', // Specify your front-end URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true // Enable credentials if needed
+}));
+
 app.use(express.json())
 app.use(express.static('public/image'))
 
