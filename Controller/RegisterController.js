@@ -4,19 +4,6 @@ import registerModel from '../Model/RegisterModel.js'
 
 
 const RegisterController = (req,res)=>{
-      // Set the CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://emsfrontend-premgc.vercel.app'); // Ensure this matches exactly
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
- 
-
-  // Handle preflight requests
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-
-  
     
         const regDetail = req.body       
       const saltRounds = 10;
