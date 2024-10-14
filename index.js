@@ -23,7 +23,7 @@ import adminsummaryRouter from './Router/AdminSummaryRouter.js'
 
 
 
-app.use('/',router)
+app.use('/register',router)
 app.use('/api',deptRouter)
 app.use('/api', empRouter)
 app.use('/api', salaryRouter)
