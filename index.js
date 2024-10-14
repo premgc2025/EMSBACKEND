@@ -1,14 +1,17 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import handler from './Router/handler.js';
+
 
 
 
 const app = express()
 
-app.use(handler)
 
+app.use(cors({
+    origin:'https://emsfrontend-premgc.vercel.app/',
+    credentials: true
+}))
 app.use(express.json())
 app.use(express.static('public/image'))
 
