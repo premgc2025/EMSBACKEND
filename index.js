@@ -1,16 +1,13 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
+import handler from './Router/handler.js';
 
 
 
 const app = express()
 
-app.use(cors({
-    origin: '*', // Specify your front-end URL
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true // Enable credentials if needed
-}));
+app.use(handler)
 
 app.use(express.json())
 app.use(express.static('public/image'))
@@ -25,6 +22,7 @@ import salaryRouter from './Router/SalaryRouter.js'
 import leaveRouter from './Router/LeaveRouter.js'
 import resetpasswordRouter from './Router/ResetPasswordRouter.js'
 import adminsummaryRouter from './Router/AdminSummaryRouter.js'
+
 
 
 app.use('/',router)

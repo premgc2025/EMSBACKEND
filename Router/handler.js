@@ -12,6 +12,6 @@ export default function handler(req, res) {
         return;
     }
 
-    // Main logic of your function
-    res.json({ message: 'Hello World' });
+    // // Main logic of your function
+    // res.json({ message: 'Hello World' });
 }
