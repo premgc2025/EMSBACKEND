@@ -9,7 +9,7 @@ const app = express()
 
 
 app.use(cors({
-    origin:'https://emsfrontend-premgc.vercel.app/',
+    origin:'https://emsfrontend-premgc.vercel.app',
     credentials: true
 }))
 app.use(express.json())
