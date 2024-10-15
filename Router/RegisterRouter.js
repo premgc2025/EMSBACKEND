@@ -7,8 +7,8 @@ import userDeleteController from '../Controller/userDeleteController.js'
 const router = express.Router()
 
 
-router.post('/',RegisterController)
-router.post('/', loginController)
+router.post('/register',RegisterController)
+router.post('/login', loginController)
 router.delete('/user',verifyToken,userDeleteController)
 
 

@@ -29,8 +29,8 @@ import adminsummaryRouter from './Router/AdminSummaryRouter.js'
 
 
 
-app.use('/api/register',router)
-app.use('/api/login',router)
+app.use('/api',router)
+app.use('/api',router)
 app.use('/api',deptRouter)
 app.use('/api', empRouter)
 app.use('/api', salaryRouter)
