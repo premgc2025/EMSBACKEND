@@ -8,7 +8,7 @@ import mongoose from 'mongoose'
 const app = express()
 const corsOptions = {
     origin: '*', // Replace with your frontend URL
-    methods: ['GET', 'POST', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PUT', 'OPTIONS'],
   };
   
   app.use(cors(corsOptions));
