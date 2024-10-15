@@ -6,12 +6,12 @@ import mongoose from 'mongoose'
 
 
 const app = express()
-
-app.use(cors({
-    origin: '*', // Specify your front-end URL
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true // Enable credentials if needed
-}));
+const corsOptions = {
+    origin: '*', // Replace with your frontend URL
+    methods: ['GET', 'POST', 'OPTIONS'],
+  };
+  
+  app.use(cors(corsOptions));
 
 app.use(express.json())
 app.use(express.static('public/image'))
@@ -29,7 +29,8 @@ import adminsummaryRouter from './Router/AdminSummaryRouter.js'
 
 
 
-app.use('/register',router)
+app.use('/api/register',router)
+app.use('/api/login',router)
 app.use('/api',deptRouter)
 app.use('/api', empRouter)
 app.use('/api', salaryRouter)
