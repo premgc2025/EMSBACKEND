@@ -8,7 +8,7 @@ import departmentModel from '../Model/DepartmentModel.js'
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
-        cb(null,'public/image')
+        cb(null,'/tmp')
     },
     filename: (req,file,cb)=>{
         cb(null, Date.now() + path.extname(file.originalname) )
@@ -18,8 +18,12 @@ const storage = multer.diskStorage({
 const upload = multer({storage:storage})
 
 const AddEmployeeController = async (req,res)=>{
+  
    
     try{
+        if (!req.body.name || !req.file) {
+            return res.status(400).json({ error: 'Name and image are required' });
+        }
     const {
         name,
         email,
