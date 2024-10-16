@@ -5,17 +5,19 @@ import multer from 'multer'
 import path from 'path'
 import employeeModel from '../Model/EmployeeModel.js'
 import departmentModel from '../Model/DepartmentModel.js'
+import { uploadImage } from '../firebase/UploadImage.js' // Adjust the import path
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb)=>{
-        cb(null,'/tmp')
-    },
-    filename: (req,file,cb)=>{
-        cb(null, Date.now() + path.extname(file.originalname) )
-    }
-})
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb)=>{
+//         cb(null,'/tmp')
+//     },
+//     filename: (req,file,cb)=>{
+//         cb(null, Date.now() + path.extname(file.originalname) )
+//     }
+// })
 
-const upload = multer({storage:storage})
+// const upload = multer({storage:storage})
+const upload = multer({ storage: multer.memoryStorage() }); // Use memory storage for multer
 
 const AddEmployeeController = async (req,res)=>{
   
@@ -24,6 +26,7 @@ const AddEmployeeController = async (req,res)=>{
         if (!req.body.name || !req.file) {
             return res.status(400).json({ error: 'Name and image are required' });
         }
+        const imageUrl = await uploadImage(req.file.buffer); // Use the buffer for the upload
     const {
         name,
         email,

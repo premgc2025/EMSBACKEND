@@ -1,0 +1,24 @@
+
+// firebase.js
+import { initializeApp } from 'firebase/app';
+import { getStorage } from 'firebase/storage';
+
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBmjBDZ5MOzV62TxsLhWIls4iQ8tdXioc0",
+    authDomain: "employee-management-syst-18fb4.firebaseapp.com",
+    projectId: "employee-management-syst-18fb4",
+    storageBucket: "employee-management-syst-18fb4.appspot.com",
+    messagingSenderId: "763073413365",
+    appId: "1:763073413365:web:98ac907f6a97037efe05bc",
+    measurementId: "G-W3PVCYQ28T"
+  };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Storage
+const storage = getStorage(app);
+
+export { storage };

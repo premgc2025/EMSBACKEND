@@ -14,7 +14,7 @@ const corsOptions = {
   app.use(cors(corsOptions));
 
 app.use(express.json())
-app.use(express.static('tmp'))
+app.use(express.static('/tmp'))
 
 
 // Imporing Model and Function
